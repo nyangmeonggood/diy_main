@@ -1,0 +1,83 @@
+@import "./styleguide.scss";
+
+#intro {
+  @include fullPage;
+
+  color: #111;
+  background-color: $bgColor;
+  z-index: 300;
+
+  p.greet {
+    @include posCenter;
+
+    text-align: center;
+    opacity: 0;
+    b {
+      display: block;
+      font-weight: bold;
+    }
+  }
+
+  div.title {
+    @include posCenter;
+
+    text-align: center;
+    opacity: 0;
+  }
+
+  &.fadeOut {
+    p.greet {
+      animation-name: fadeInOut;
+      animation-duration: 3.5s;
+    }
+
+    div.title {
+      opacity: 1;
+      transition: opacity 0s;
+      transition-delay: 3s;
+
+      background-color: white;
+      padding: 0px 0px 20px;
+      position: relative;
+      display: inline-block;
+      border-radius: 4px;
+      p {
+        padding: 0 20px;
+      }
+      &::before {
+        display: block;
+        height: 30px;
+        background-color: black;
+        content: "";
+      }
+      // animation-name: fadeIn;
+      // animation-duration: 1s;
+      // animation-delay: 3s;
+      // animation-fill-mode: forwards;
+    }
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

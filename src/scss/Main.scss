@@ -1,0 +1,30 @@
+@import "./styleguide.scss";
+
+#root {
+  width: 100%;
+  @include settingAnimation(width);
+  header {
+    @include settingAnimation(width);
+  }
+
+  &.setting {
+    width: $settingWith;
+
+    header {
+      &.fixed {
+        width: $settingWith;
+        left: 0;
+        transform: translateX(0);
+      }
+    }
+    .main {
+      @include settingAnimation(width);
+    }
+  }
+}
+.main {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}

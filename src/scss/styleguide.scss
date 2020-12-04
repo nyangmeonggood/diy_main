@@ -1,0 +1,56 @@
+$settingWith: 70%;
+$settingBoxWith: 30%;
+$bgColor: #ecf0f1;
+
+@mixin settingAnimation($target) {
+  transition: $target 0.3s ease-in;
+}
+
+@mixin fullPage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+@mixin posCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin textAligns {
+  &.left {
+    text-align: left;
+  }
+  &.center {
+    text-align: center;
+  }
+  &.right {
+    text-align: right;
+  }
+}
+
+@mixin scrollHide {
+  /* 길이 변경 */
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  /* 트랙 (Track) */
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* 핸들 (Handle) */
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+
+  /* Hover시 핸들 (Handle) */
+  &::-webkit-scrollbar-thumb:hover {
+    background: transparent;
+  }
+}
